@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Artikel - SkyTransNusantara</title>
+    <meta name="description" content="Baca artikel, tips, dan panduan terbaru seputar rental mobil, perjalanan, dan destinasi wisata di Bandung & Cimahi dari SkyTransNusantara.">
+    <meta name="keywords" content="blog rental mobil, tips sewa mobil, panduan wisata bandung, artikel otomotif, SkyTransNusantara">
+    <meta name="author" content="SkyTransNusantara">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blog & Artikel - SkyTransNusantara">
+    <meta property="og:description" content="Baca artikel, tips, dan panduan terbaru seputar rental mobil, perjalanan, dan destinasi wisata di Bandung & Cimahi.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon Sosial Media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-maroon: #6D071A;
+            --dark-background: #1C0202;
+            --accent-yellow: #FDD500;
+            --light-yellow: #FFEEB3;
+            --black: #120101;
+            --white: #ffffff;
+            --light-gray: #f0f0f0;
+            --gray: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: var(--dark-background);
+            overflow-x: hidden;
+        }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(18, 1, 1, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1001;
+            border-bottom: 1px solid rgba(253, 213, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(28, 2, 2, 0.9);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo:hover {
+            color: var(--light-yellow);
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 35px; 
+            height: 35px;
+            object-fit: contain; 
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-10deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a.active {
+            color: var(--accent-yellow);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border: 1px solid var(--accent-yellow);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-menu a.active::before,
+        .nav-menu a:hover::before {
+            background-color: var(--accent-yellow);
+            transform: scale(1.2);
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 27px; 
+            background: var(--accent-yellow);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a.active::after,
+        .nav-menu a:hover::after {
+            width: calc(100% - 27px); 
+        }
+
+        .hamburger {
+            display: none; 
+            width: 30px;
+            height: 22px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1002; 
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--white);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) { top: 0px; }
+        .hamburger span:nth-child(2) { top: 9px; }
+        .hamburger span:nth-child(3) { top: 18px; }
+
+        .hamburger.active span:nth-child(1) { top: 9px; transform: rotate(135deg); background: var(--accent-yellow); }
+        .hamburger.active span:nth-child(2) { opacity: 0; left: -30px; }
+        .hamburger.active span:nth-child(3) { top: 9px; transform: rotate(-135deg); background: var(--accent-yellow); }
+
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-background) 100%);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary-maroon);
+            background: rgba(18, 1, 1, 0.6);
+            color: var(--white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--accent-yellow);
+            background: rgba(18, 1, 1, 0.8);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-yellow);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--dark-background);
+            font-weight: 600;
+        }
+
+        .search-bar button:hover {
+            background: var(--light-yellow);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .category-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid var(--primary-maroon);
+            background: transparent;
+            color: var(--white);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            border-color: var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 80px 0;
+            background-color: var(--dark-background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: linear-gradient(145deg, #2a010c, #4a021f);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            border: 2px solid var(--accent-yellow);
+            box-shadow: 0 15px 40px rgba(253, 213, 0, 0.2);
+        }
+
+        .featured-post-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .featured-post-image {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            object-fit: cover;
+        }
+
+        .featured-post-text {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .featured-post-text h2 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .featured-post-text p {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-post-text .read-more-btn {
+            display: inline-block;
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .featured-post-text .read-more-btn:hover {
+            background: var(--light-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(253, 213, 0, 0.3);
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 3rem;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background: linear-gradient(145deg, #2a010c, #4a021f);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            border-color: var(--accent-yellow);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-category {
+            display: inline-block;
+            background: var(--primary-maroon);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            width: fit-content;
+        }
+
+        .post-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .post-title:hover {
+            color: var(--accent-yellow);
+        }
+        
+        .post-meta {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-meta span {
+            margin-right: 1rem;
+        }
+
+        .post-excerpt {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            flex: 1;
+            font-size: 0.95rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            color: var(--accent-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .read-more-btn:hover {
+            color: var(--light-yellow);
+            padding-left: 5px;
+        }
+        
+        .sidebar .widget {
+            background: var(--black);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar .widget-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-maroon);
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar ul li a::before {
+            content: '▸';
+            color: var(--accent-yellow);
+            font-weight: bold;
+        }
+
+        .sidebar ul li a:hover {
+            color: var(--accent-yellow);
+            padding-left: 5px;
+        }
+
+        /* Newsletter Widget */
+        .newsletter-widget {
+            background: linear-gradient(135deg, var(--primary-maroon), #4a021f) !important;
+            border: 2px solid var(--accent-yellow) !important;
+        }
+
+        .newsletter-widget input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid var(--accent-yellow);
+            background: rgba(0,0,0,0.3);
+            color: var(--white);
+        }
+
+        .newsletter-widget input:focus {
+            outline: none;
+            border-color: var(--light-yellow);
+        }
+
+        .newsletter-widget button {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-widget button:hover {
+            background: var(--light-yellow);
+            transform: translateY(-2px);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .pagination a, .pagination span {
+            padding: 0.6rem 1rem;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid var(--primary-maroon);
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover, .pagination span.active {
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            border-color: var(--accent-yellow);
+        }
+
+        .pagination span.active {
+            font-weight: 700;
+        }
+
+        .footer {
+            background: var(--black);
+            padding: 50px 0 20px;
+            color: var(--white);
+            border-top: 2px solid var(--primary-maroon);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--light-gray);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover { color: var(--accent-yellow); }
+
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a {
+            width: 40px; height: 40px; background: var(--primary-maroon);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; font-size: 1.2rem;
+        }
+        .social-links a:hover { background: var(--accent-yellow); color: var(--dark-background); transform: translateY(-3px); }
+
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid var(--primary-maroon); color: var(--gray); }
+
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background-color: #25d366; color: white; border-radius: 50px; text-align: center;
+            font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 100;
+            text-decoration: none; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
+
+        @media (max-width: 992px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+            .featured-post-content {
+                grid-template-columns: 1fr;
+            }
+            .featured-post-image {
+                min-height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed; top: 0; left: 0; width: 80%; max-width: 320px; height: 100vh;
+                background-color: rgba(28, 2, 2, 0.98); backdrop-filter: blur(10px);
+                flex-direction: column; justify-content: center; align-items: flex-start;
+                gap: 1.5rem; padding: 2rem; transform: translateX(-100%); 
+                transition: transform 0.4s ease-in-out; z-index: 1000; box-shadow: 10px 0 40px rgba(0,0,0,0.5);
+            }
+            .nav-menu.active { transform: translateX(0); }
+            .nav-menu a { font-size: 1.3rem; text-align: left; width: 100%; }
+            .nav-menu a::after { display: none; }
+            .page-header h1 { font-size: 2.5rem; }
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+            .featured-post-text {
+                padding: 2rem;
+            }
+            .featured-post-text h2 {
+                font-size: 1.6rem;
+            }
+            .logo {
+                font-size: 1.2rem;
+                gap: 0.5rem;
+            }
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container, .container { padding: 0 1rem; }
+            .post-title { font-size: 1.2rem; }
+            .category-filter {
+                gap: 0.5rem;
+            }
+            .category-btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo sky trans nusantara.png" alt="Logo SkyTransNusantara" class="logo-icon">
+                <span>SkyTransNusantara</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Tentang</a></li>
+                <li><a href="index.html">Lepas Kunci</a></li>
+                <li><a href="mobil-plus-supir.html">Mobil + Supir</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Blog & Artikel</h1>
+                <p>Informasi, tips, dan panduan seputar rental mobil & perjalanan.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Cari artikel...">
+                    <button onclick="searchPosts()"><i class="fa fa-search"></i></button>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="category-filter">
+                    <button class="category-btn active" onclick="filterCategory('all')">Semua</button>
+                    <button class="category-btn" onclick="filterCategory('tips')">Tips & Trik</button>
+                    <button class="category-btn" onclick="filterCategory('wisata')">Wisata</button>
+                    <button class="category-btn" onclick="filterCategory('review')">Review</button>
+                    <button class="category-btn" onclick="filterCategory('kuliner')">Kuliner</button>
+                    <button class="category-btn" onclick="filterCategory('mudik')">Mudik</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="section" style="padding-top: 50px;">
+            <div class="container">
+                <div class="featured-post animate-on-scroll">
+                    <div class="featured-post-content">
+                        <img src="https://img.okezone.com/content/2020/10/26/408/2299441/danau-kawah-putih-wisata-alam-eksotis-nan-legendaris-di-bandung-VTi6AvxpFR.jpg" class="featured-post-image">
+                        <div class="featured-post-text">
+                            <span class="featured-badge">⭐ ARTIKEL UNGGULAN</span>
+                            <h2>Panduan Lengkap Wisata Kawah Putih: Tips & Informasi Terkini</h2>
+                            <p>Kawah Putih Ciwidey menjadi salah satu destinasi wisata alam paling populer di Bandung. Temukan tips lengkap untuk mengunjungi tempat eksotis ini!</p>
+                            <a href="artikel-kawah-putih.html" class="read-more-btn">Baca Artikel Lengkap <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Content Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="blog-layout">
+                    <!-- Blog Posts -->
+                    <div class="blog-posts" id="blogPosts">
+                        <!-- Post 1 -->
+                        <article class="post-card animate-on-scroll" data-category="wisata">
+                            <img src="https://www.trippers.id/wp-content/uploads/2020/05/Headline-tempat-wisata-hits-di-bandung.jpg" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Wisata</span>
+                                <a href="artikel-destinasi-bandung.html" class="post-title">5 Destinasi Wisata Wajib di Bandung untuk Liburan Keluarga</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 25 Oktober 2025</span></p>
+                                <p class="post-excerpt">Bandung menawarkan berbagai destinasi wisata menarik untuk liburan keluarga. Temukan 5 tempat wajib yang harus dikunjungi!</p>
+                                <a href="artikel-destinasi-bandung.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 2 -->
+                        <article class="post-card animate-on-scroll" data-category="tips">
+                            <img src="https://captionkata.b-cdn.net/wp-content/uploads/2022/04/Keuntungan-Memilih-Layanan-dengan-Driver-di-Sewa-Mobil-Jakarta.jpg" alt="Keuntungan Sewa Mobil dengan Supir" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Tips & Trik</span>
+                                <a href="artikel-keuntungan-sewa-supir.html" class="post-title">7 Keuntungan Sewa Mobil dengan Supir untuk Perjalanan Anda</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 23 Oktober 2025</span></p>
+                                <p class="post-excerpt">Menyewa mobil dengan supir memiliki banyak keuntungan, terutama untuk perjalanan jauh atau wisata keluarga. Simak alasannya!</p>
+                                <a href="artikel-keuntungan-sewa-supir.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 3 -->
+                        <article class="post-card animate-on-scroll" data-category="kuliner">
+                            <img src="https://belvaniatrans.com/wp-content/uploads/2023/11/Rekomendasi-Kuliner-di-Cimahi.jpg" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Kuliner</span>
+                                <a href="artikel-kuliner-cimahi.html" class="post-title">5 Kuliner Khas Cimahi yang Wajib Dicoba Wisatawan</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 22 Oktober 2025</span></p>
+                                <p class="post-excerpt">Cimahi memiliki beragam kuliner khas yang sayang untuk dilewatkan. Jelajahi cita rasa kuliner lokal yang autentik!</p>
+                                <a href="artikel-kuliner-cimahi.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 4 -->
+                        <article class="post-card animate-on-scroll" data-category="wisata">
+                            <img src="https://travelspromo.com/wp-content/uploads/2019/08/Dengan-keindahannya-Pantai-Pangandaran-Ciamis-pernah-dinobatkan-sebagai-pantai-terbaik-di-provinsi-Jawa-Barat-mulkisalman-e1566528836983.jpg" alt="Road Trip Pangandaran" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Wisata</span>
+                                <a href="artikel-road-trip-pangandaran.html" class="post-title">Panduan Road Trip Bandung-Pangandaran: Rute dan Estimasi Biaya</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 21 Oktober 2025</span></p>
+                                <p class="post-excerpt">Rencanakan road trip sempurna ke Pangandaran dengan panduan rute terbaik, estimasi biaya, dan tips perjalanan.</p>
+                                <a href="artikel-road-trip-pangandaran.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 5 -->
+                        <article class="post-card animate-on-scroll" data-category="wisata">
+                            <img src="https://cove-blog-id.sgp1.cdn.digitaloceanspaces.com/cove-blog-id/2023/07/wisata-di-ciwidey.webp" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Wisata</span>
+                                <a href="artikel-wisata-alam-ciwidey.html" class="post-title">Eksplorasi Wisata Alam Ciwidey: Destinasi Sejuk di Bandung Selatan</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 20 Oktober 2025</span></p>
+                                <p class="post-excerpt">Ciwidey menawarkan pesona alam yang memukau dengan udara sejuk dan pemandangan indah. Jelajahi keindahan alamnya!</p>
+                                <a href="artikel-wisata-alam-ciwidey.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 6 -->
+                        <article class="post-card animate-on-scroll" data-category="tips">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.dLv8OV7Att5I1M4tyTqGcAHaFB?pid=Api&P=0&h=180" alt="Mobil Irit BBM" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Tips & Trik</span>
+                                <a href="artikel-mobil-irit.html" class="post-title">5 Mobil Rental Paling Irit BBM untuk Perjalanan Hemat</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 18 Oktober 2025</span></p>
+                                <p class="post-excerpt">Pilihan mobil rental dengan konsumsi BBM paling irit untuk perjalanan yang lebih ekonomis dan ramah kantong.</p>
+                                <a href="artikel-mobil-irit.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 7 -->
+                        <article class="post-card animate-on-scroll" data-category="wisata">
+                            <img src="https://cove-blog-id.sgp1.cdn.digitaloceanspaces.com/cove-blog-id/2023/02/oleh-oleh-khas-bandung.webp" alt="Oleh-Oleh Bandung" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Wisata</span>
+                                <a href="artikel-oleh-oleh-bandung.html" class="post-title">10 Oleh-Oleh Khas Bandung yang Wajib Dibawa Pulang</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 17 Oktober 2025</span></p>
+                                <p class="post-excerpt">Temukan oleh-oleh khas Bandung terbaik yang wajib dibawa pulang sebagai kenang-kenangan perjalanan Anda.</p>
+                                <a href="artikel-oleh-oleh-bandung.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 8 -->
+                        <article class="post-card animate-on-scroll" data-category="mudik">
+                            <img src="https://media.suara.com/pictures/653x366/2024/04/03/23859-ilustrasi-persiapan-mudik.jpg" alt="Persiapan Mudik" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Mudik</span>
+                                <a href="artikel-persiapan-mudik.html" class="post-title">Checklist Persiapan Mudik: Tips Agar Perjalanan Aman dan Nyaman</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 15 Oktober 2025</span></p>
+                                <p class="post-excerpt">Persiapan mudik yang matang adalah kunci perjalanan yang aman dan nyaman. Simak checklist lengkap untuk mudik Anda!</p>
+                                <a href="artikel-persiapan-mudik.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 9 -->
+                        <article class="post-card animate-on-scroll" data-category="tips">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.jyWKENlSZikDCLgUQn_MAwHaDt?pid=Api&P=0&h=180" alt="Syarat Lepas Kunci" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Tips & Trik</span>
+                                <a href="artikel-syarat-lepas-kunci.html" class="post-title">Panduan Lengkap: Syarat dan Ketentuan Sewa Mobil Lepas Kunci</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 12 Oktober 2025</span></p>
+                                <p class="post-excerpt">Ketahui syarat dan ketentuan lengkap untuk menyewa mobil lepas kunci agar prosesnya lancar dan tanpa kendala.</p>
+                                <a href="artikel-syarat-lepas-kunci.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 10 -->
+                        <article class="post-card animate-on-scroll" data-category="wisata">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.7StEvfZqb1Ljsn6ZzPCH-wHaE8?pid=Api&P=0&h=180" alt="Tempat Instagramable" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Wisata</span>
+                                <a href="artikel-tempat-instagramable.html" class="post-title">7 Spot Instagramable di Bandung untuk Feed Instagram Kamu</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 10 Oktober 2025</span></p>
+                                <p class="post-excerpt">Kumpulan spot foto terbaik di Bandung yang akan membuat feed Instagram kamu semakin keren dan menarik!</p>
+                                <a href="artikel-tempat-instagramable.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 11 -->
+                        <article class="post-card animate-on-scroll" data-category="tips">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.aAwiEGyPkkeYgAdSQO2jHQHaE7?pid=Api&P=0&h=180" alt="Tips Rental Mobil" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Tips & Trik</span>
+                                <a href="artikel-tips-rental.html" class="post-title">Tips Memilih Jasa Rental Mobil yang Aman dan Terpercaya</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 08 Oktober 2025</span></p>
+                                <p class="post-excerpt">Jangan sampai salah pilih! Ikuti tips berikut untuk memastikan Anda mendapatkan layanan rental mobil yang aman dan terpercaya.</p>
+                                <a href="artikel-tips-rental.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Post 12 -->
+                        <article class="post-card animate-on-scroll" data-category="review">
+                            <img src="https://www.doktermobil.com/wp-content/uploads/2024/06/Perbandingan-Innova-dan-Xpander.webp" alt="Review Mobil Keluarga" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Review</span>
+                                <a href="artikel-review-mobil.html" class="post-title"> 5 Mobil Rental Terfavorit di Indonesia</a>
+                                <p class="post-meta"><span><i class="fa fa-calendar-alt"></i> 05 Oktober 2025</span></p>
+                                <p class="post-excerpt">Bingung memilih antara pilihan mobil untuk perjalanan keluarga? Simak perbandingan lengkapnya!</p>
+                                <a href="artikel-review-mobil.html" class="read-more-btn">Baca Selengkapnya &rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <div class="widget newsletter-widget animate-on-scroll">
+                            <h3 class="widget-title">📧 Newsletter</h3>
+                            <p style="color: var(--light-gray); margin-bottom: 1rem;">Dapatkan tips & promo terbaru langsung di email Anda!</p>
+                            <input type="email" placeholder="Email Anda">
+                            <button>Berlangganan</button>
+                        </div>
+
+                        <div class="widget animate-on-scroll">
+                            <h3 class="widget-title">📌 Postingan Populer</h3>
+                            <ul>
+                                <li><a href="artikel-kawah-putih.html">Panduan Lengkap Wisata Kawah Putih</a></li>
+                                <li><a href="artikel-destinasi-bandung.html">5 Destinasi Wisata Wajib di Bandung</a></li>
+                                <li><a href="artikel-keuntungan-sewa-supir.html">Keuntungan Sewa Mobil dengan Supir</a></li>
+                                <li><a href="artikel-kuliner-cimahi.html">5 Kuliner Khas Cimahi</a></li>
+                                <li><a href="artikel-road-trip-pangandaran.html">Road Trip Bandung-Pangandaran</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget animate-on-scroll">
+                            <h3 class="widget-title">🏷️ Kategori</h3>
+                            <ul>
+                                <li><a href="#">Tips & Trik (5)</a></li>
+                                <li><a href="#">Wisata (6)</a></li>
+                                <li><a href="#">Review Mobil (1)</a></li>
+                                <li><a href="#">Kuliner (1)</a></li>
+                                <li><a href="#">Mudik (1)</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget animate-on-scroll">
+                            <h3 class="widget-title">🔗 Link Berguna</h3>
+                            <ul>
+                                <li><a href="index.html">Layanan Lepas Kunci</a></li>
+                                <li><a href="mobil-plus-supir.html">Mobil + Supir</a></li>
+                                <li><a href="index.html#fleet">Armada Kami</a></li>
+                                <li><a href="#contact">Hubungi Kami</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#"><i class="fa fa-chevron-left"></i></a>
+                    <span class="active">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SkyTransNusantara</h3>
+                    <p>Rental mobil terpercaya di Bandung & Cimahi dengan layanan profesional dan harga terjangkau.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6285848928876" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61579391992971" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/skytransnusantara.my_id/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak kami</h3>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/6285848928876">0858-4892-8876</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:skytransnusantara@gmail.com">skytransnusantara@gmail.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Layanan</h3>
+                    <p><a href="index.html">Lepas Kunci</a></p>
+                    <p><a href="mobil-plus-supir.html">Dengan Supir</a></p>
+                    <p><a href="blog.html">Blog</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkyTransNusantara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6285848928876" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Animate on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        // Blog Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCategoryList();
+        });
+
+        function filterCategory(category) {
+            const buttons = document.querySelectorAll('.category-btn');
+            const posts = document.querySelectorAll('.post-card');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // find button that has onclick="filterCategory('category')"
+            document.querySelector(`.category-btn[onclick="filterCategory('${category}')"]`).classList.add('active');
+            
+            posts.forEach(post => {
+                post.style.display = (category === 'all' || post.dataset.category === category) ? 'flex' : 'none';
+            });
+        }
+
+        function searchPosts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const posts = document.querySelectorAll('.post-card');
+            
+            posts.forEach(post => {
+                const title = post.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                
+                post.style.display = (title.includes(searchTerm) || excerpt.includes(searchTerm)) ? 'flex' : 'none';
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchPosts();
+            }
+        });
+
+        function updateCategoryList() {
+            const posts = document.querySelectorAll('.post-card');
+            const categoryCounts = {};
+            
+            posts.forEach(post => {
+                const category = post.dataset.category;
+                if (category) {
+                    categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+                }
+            });
+
+            const categoryList = document.getElementById('category-list');
+            categoryList.innerHTML = ''; // Clear existing list
+
+            for (const category in categoryCounts) {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = "#";
+                link.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)} (${categoryCounts[category]})`;
+                link.onclick = (e) => {
+                    e.preventDefault();
+                    filterCategory(category);
+                };
+                listItem.appendChild(link);
+                categoryList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>
+

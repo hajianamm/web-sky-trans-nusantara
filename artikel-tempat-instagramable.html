@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Spot Instagramable di Bandung untuk Feed Keren - SkyTransNusantara</title>
+    <meta name="description" content="Siap-siap pamer di Instagram! Inilah 7 spot foto paling Instagramable di Bandung yang akan membuat feed Anda semakin estetik dan menarik.">
+    <meta name="author" content="SkyTransNusantara">
+    
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* --- General Styling --- */
+        :root {
+            --primary-maroon: #6D071A;
+            --dark-background: #1C0202;
+            --accent-yellow: #FDD500;
+            --light-yellow: #FFEEB3;
+            --black: #120101;
+            --white: #ffffff;
+            --light-gray: #f0f0f0;
+            --gray: #b0b0b0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--white);
+            background-color: var(--dark-background);
+            overflow-x: hidden;
+        }
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        /* --- Page Overlay --- */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background: rgba(18, 1, 1, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1001;
+            border-bottom: 1px solid rgba(253, 213, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(28, 2, 2, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo:hover {
+            color: var(--light-yellow);
+            transform: scale(1.05);
+        }
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+        .logo:hover .logo-icon {
+            transform: rotate(-10deg);
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .nav-menu a.active {
+            color: var(--accent-yellow);
+        }
+        .nav-menu a::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border: 1px solid var(--accent-yellow);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-menu a:hover::before, .nav-menu a.active::before {
+            background-color: var(--accent-yellow);
+            transform: scale(1.2);
+        }
+        .nav-menu a:hover {
+            color: var(--accent-yellow);
+        }
+        .hamburger-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+            background: none;
+            border: none;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            z-index: 1002;
+        }
+
+        /* --- Article Styles --- */
+        .article-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(rgba(28, 2, 2, 0.8), rgba(28, 2, 2, 0.8)), url('https://placehold.co/1200x400/6D071A/FFFFFF?text=Spot+Foto+Keren') no-repeat center center/cover;
+        }
+        .article-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            line-height: 1.3;
+        }
+        .post-meta {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        .post-meta span {
+            margin: 0 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .article-content {
+            padding: 50px 0;
+        }
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--accent-yellow);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .article-content p {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+        }
+        .article-content ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 25px;
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .back-to-blog:hover {
+            background-color: var(--light-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(253, 213, 0, 0.3);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background: var(--black);
+            padding: 50px 0 20px;
+            color: var(--white);
+            border-top: 2px solid var(--primary-maroon);
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .footer-section p, .footer-section a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: var(--accent-yellow);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--primary-maroon);
+            color: var(--gray);
+        }
+
+        /* --- MOBILE FRIENDLY STYLES (MEDIA QUERIES) --- */
+        @media (max-width: 768px) {
+            body {
+                line-height: 1.7;
+            }
+            .nav-container {
+                padding: 0 1rem;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background-color: var(--dark-background);
+                flex-direction: column;
+                padding-top: 5rem;
+                gap: 1rem;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+                display: flex;
+            }
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+            .nav-menu li {
+                width: 100%;
+                text-align: left;
+            }
+            .nav-menu a {
+                padding: 1rem 2rem;
+                justify-content: flex-start;
+                width: 100%;
+            }
+            .hamburger-menu {
+                display: block;
+            }
+            .hamburger-menu .fa {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+            .hamburger-menu .fa-times {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            .hamburger-menu.active .fa-bars {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotate(-90deg);
+            }
+            .hamburger-menu.active .fa-times {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            .article-header {
+                padding-top: 120px;
+                padding-bottom: 40px;
+            }
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+            .post-meta span {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            .container { 
+                padding: 0 1.8rem; 
+            }
+            .article-content { padding: 40px 0; }
+            .article-content h2 { font-size: 1.6rem; }
+            .article-content p { font-size: 1rem; }
+            .footer-content {
+                padding: 0 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo sky trans nusantara.png" alt="Logo SkyTransNusantara" class="logo-icon" onerror="this.onerror=null;this.src='https://placehold.co/35x35/1C0202/FFFFFF?text=S';">
+                <span>SkyTransNusantara</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Tentang</a></li>
+                <li><a href="index.html">Lepas Kunci</a></li>
+                <li><a href="mobil-plus-supir.html">Mobil + Supir</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-times"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header class="article-header">
+                <h1>7 Spot Instagramable di Bandung untuk Feed Instagram Kamu</h1>
+                <p class="post-meta">
+                    <span><i class="fa fa-calendar-alt"></i> 12 Oktober 2025</span>
+                    <span><i class="fa fa-user"></i> Admin</span>
+                </p>
+            </header>
+            
+            <div class="article-content container">
+                <p>Selain udaranya yang sejuk dan kulinernya yang lezat, Bandung juga dipenuhi dengan berbagai sudut kota dan tempat wisata yang sangat fotogenik. Bagi Anda yang hobi fotografi atau sekadar ingin mempercantik feed Instagram, Kota Kembang ini adalah surga. Berikut 7 spot Instagramable yang wajib Anda kunjungi.</p>
+
+                <img src="https://img.okezone.com/content/2023/03/12/408/2779762/cara-menuju-ke-wisata-kawah-putih-ciwidey-cantik-nian-bikin-ogah-pulang-LJDtNcdNbe.JPG" alt="Pemandangan Kawah Putih yang sureal">
+
+                <h2>1. Kawah Putih Ciwidey</h2>
+                <p>Tempat ini adalah definisi dari kata "magis". Perpaduan danau kawah berwarna toska, pasir putih, dan siluet pohon kering menciptakan lanskap yang sureal. Angle foto dari mana saja dijamin akan terlihat dramatis dan memukau.</p>
+
+                <h2>2. Glamping Lakeside Rancabali</h2>
+                <p>Restoran berbentuk kapal pinisi yang "terdampar" di tepi Situ Patenggang ini adalah ikonnya. Berfoto di anjungan kapal dengan latar belakang danau dan kebun teh yang hijau akan memberikan hasil foto yang spektakuler.</p>
+                
+                <img src="https://tse2.mm.bing.net/th/id/OIP.H3CVMZgPHEm0cDxlonWFtQHaEK?pid=Api&P=0&h=180">
+
+                <h2>3. The Great Asia Africa, Lembang</h2>
+                <p>Ingin foto dengan nuansa Jepang, Korea, India, atau Timur Tengah tanpa perlu ke luar negeri? Di sinilah tempatnya. Dengan menyewa kostum tradisional, foto Anda akan terlihat sangat otentik seolah sedang berlibur keliling dunia.</p>
+
+                <h2>4. Jalan Braga</h2>
+                <p>Untuk nuansa klasik dan vintage, Jalan Braga adalah juaranya. Bangunan-bangunan tua peninggalan Belanda yang masih terawat, lampu jalan yang antik, dan lukisan jalanan menciptakan atmosfer Eropa tempo dulu yang sangat estetik untuk difoto.</p>
+
+                <h2>5. Hutan Anggrek Cikole</h2>
+                <p>Jembatan gantung kayu yang menyala dengan lampu kekuningan di malam hari adalah spot paling dicari di Hutan Anggrek. Suasananya yang romantis dan sedikit misterius membuat tempat ini sangat populer untuk foto pre-wedding maupun sekadar update feed.</p>
+                
+                <h2>6. Dago Bakery Punclut</h2>
+                <p>Kafe ini menawarkan bangunan bergaya kastil Eropa klasik yang megah. Dari menara kastil, Anda bisa mendapatkan foto dengan latar belakang pemandangan kota Bandung dari ketinggian yang sangat indah, terutama saat matahari terbenam.</p>
+
+                <h2>7. Rabbit Town</h2>
+                <p>Tempat ini memang didesain untuk menjadi surga foto. Dengan berbagai instalasi seni yang unik dan penuh warna, setiap sudut Rabbit Town adalah spot foto yang potensial. Tempat ini sangat cocok bagi Anda yang menyukai foto-foto ceria.</p>
+                
+                <p>Mengunjungi banyak spot foto dalam satu hari membutuhkan mobilitas yang tinggi. Agar tidak repot berpindah-pindah dengan transportasi umum, menyewa mobil dari <strong>SkyTransNusantara</strong> adalah solusi paling praktis untuk petualangan Instagram Anda di Bandung.</p>
+                
+                <a href="blog.html" class="back-to-blog">&larr; Kembali ke Blog</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+             <div class="footer-section">
+                <h3>SkyTransNusantara</h3>
+                <p>Rental mobil terpercaya di Bandung & Cimahi dengan layanan profesional dan harga terjangkau.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak kami</h3>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/6285848928876">0858-4892-8876</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@skytransnusantara.com">info@skytransnusantara.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Layanan</h3>
+                <p><a href="index.html">Lepas Kunci</a></p>
+                <p><a href="mobil-plus-supir.html">Dengan Supir</a></p>
+                <p><a href="blog.html">Blog</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SkyTransNusantara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const hamburger = document.getElementById('hamburger-menu');
+            const navMenu = document.getElementById('nav-menu');
+            const overlay = document.getElementById('overlay');
+            const body = document.body;
+
+            function closeMenu() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('no-scroll');
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                overlay.classList.toggle('active');
+                body.classList.toggle('no-scroll');
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
+    </script>
+</body>
+</html>

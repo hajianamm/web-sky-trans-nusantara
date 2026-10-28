@@ -1,0 +1,26 @@
+# Mengaktifkan mesin rewrite URL
+RewriteEngine On
+
+# --- Aturan 1: Paksa semua trafik ke HTTPS (http -> https) ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# --- Aturan 2: Atasi 404 & Sajikan konten index.html untuk URL utama ---
+# INI ADALAH BARIS KODE BARU YANG MEMPERBAIKI MASALAH 404
+RewriteRule ^rental-mobil-cimahi-bandung/?$ index.html [L]
+
+
+# --- Aturan 3: Alihkan halaman utama ke URL spesifik ---
+RewriteRule ^index\.html$ /rental-mobil-cimahi-bandung [R=301,L]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /rental-mobil-cimahi-bandung [R=301,L]
+
+
+# --- Aturan 4: Hapus ekstensi .html dari URL secara umum ---
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+

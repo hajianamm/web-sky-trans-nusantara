@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Mobil + Supir Bandung Cimahi | SkyTransNusantara</title>
+    <meta name="description" content="SkyTransNusantara – Jasa rental mobil dengan supir terpercaya di Bandung & Cimahi. Harga terjangkau, armada lengkap, dan layanan profesional.">
+    <meta name="keywords" content="rental mobil dengan supir bandung, rental mobil plus supir cimahi, sewa mobil + supir bandung, SkyTransNusantara">
+    <meta name="author" content="SkyTransNusantara">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rental Mobil + Supir Bandung Cimahi | SkyTransNusantara">
+    <meta property="og:description" content="Jasa rental mobil dengan supir terpercaya di Bandung & Cimahi. Harga terjangkau, armada lengkap, dan layanan profesional.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon Sosial Media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Palet warna baru yang terinspirasi dari gambar referensi */
+            --primary-maroon: #6D071A; /* Warna merah marun dari gambar */
+            --dark-background: #1C0202;    /* Warna latar belakang yang sangat gelap */
+            --accent-yellow: #FDD500;  /* Kuning cerah untuk tombol dan highlight */
+            --light-yellow: #FFEEB3;  /* Kuning lembut untuk efek hover */
+            --black: #120101;
+            --white: #ffffff;
+            --light-gray: #f0f0f0;
+            --gray: #b0b0b0; /* Sedikit lebih terang agar mudah dibaca */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: var(--dark-background); /* Latar belakang simpel tanpa pola */
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(18, 1, 1, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(253, 213, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(28, 2, 2, 0.9);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo:hover {
+            color: var(--light-yellow);
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 35px; 
+            height: 35px;
+            object-fit: contain; 
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-10deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a.active {
+            color: var(--accent-yellow);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border: 1px solid var(--accent-yellow);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-menu a.active::before,
+        .nav-menu a:hover::before {
+            background-color: var(--accent-yellow);
+            transform: scale(1.2);
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 27px; 
+            background: var(--accent-yellow);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a.active::after,
+        .nav-menu a:hover::after {
+            width: calc(100% - 27px); 
+        }
+
+        .hamburger {
+            display: none; 
+            width: 30px;
+            height: 22px;
+            position: relative;
+            cursor: pointer;
+            z-index: 101; 
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--white);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) { top: 0px; }
+        .hamburger span:nth-child(2) { top: 9px; }
+        .hamburger span:nth-child(3) { top: 18px; }
+
+        .hamburger.active span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+            background: var(--accent-yellow); 
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+            background: var(--accent-yellow); 
+        }
+
+        .hero-static {
+            position: relative;
+            height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            background-color: var(--dark-background);
+            overflow: hidden; 
+        }
+        
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-static-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 1rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-static-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-wrap: balance; 
+            animation: fadeIn 1.5s ease-in-out; 
+            text-shadow: none; 
+        }
+
+        .hero-static-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--light-gray);
+            text-wrap: balance;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(253, 213, 0, 0.25);
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(253, 213, 0, 0.35);
+            background-color: var(--light-yellow);
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+            background-color: var(--dark-background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-yellow);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-top: -2rem;
+            margin-bottom: 3rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .about {
+             background-color: transparent;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-gray);
+        }
+
+        .about-text h2 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .about-text ul li {
+            margin-bottom: 10px;
+            color: var(--light-gray);
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .about-text ul li::before {
+            content: '✓';
+            color: var(--accent-yellow);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .gallery {
+            background-color: var(--black);
+        }
+        
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .car-card {
+            background: linear-gradient(145deg, #2a010c, #4a021f);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 20px -5px var(--accent-yellow);
+            border-color: var(--accent-yellow);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            background-color: #333; /* Warna latar jika gambar gagal dimuat */
+            transition: transform 0.4s ease; /* PENAMBAHAN: Transisi untuk animasi zoom */
+        }
+        
+        /* PENAMBAHAN: Efek zoom pada gambar saat kartu di-hover */
+        .car-card:hover .car-image {
+            transform: scale(1.05);
+        }
+
+        .car-info { 
+            padding: 1.5rem; 
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Membuat info mengisi sisa ruang */
+        }
+        .car-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .car-price {
+            font-size: 1.2rem;
+            color: var(--accent-yellow);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .car-features { 
+            list-style: none; 
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Mendorong tombol ke bawah */
+        }
+        .car-features li { padding: 0.2rem 0; color: var(--gray); }
+        
+        .car-book-btn {
+            display: block;
+            margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
+            padding: 10px 15px;
+            background-color: var(--accent-yellow);
+            color: var(--dark-background);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .car-book-btn:hover {
+            background-color: var(--light-yellow);
+            transform: scale(1.05);
+        }
+
+
+        .seo-section {
+            background-color: transparent;
+            text-align: center;
+        }
+
+        .seo-content h2 {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .seo-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer {
+            background: var(--black);
+            padding: 50px 0 20px;
+            color: var(--white);
+            border-top: 2px solid var(--primary-maroon);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--light-gray);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover { color: var(--accent-yellow); }
+
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-maroon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-yellow);
+            color: var(--dark-background);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--primary-maroon);
+            color: var(--gray);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 100;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background-color: rgba(28, 2, 2, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center; 
+                align-items: flex-start;
+                gap: 1.5rem;
+                padding: 2rem;
+                transform: translateX(-100%); 
+                transition: transform 0.4s ease-in-out;
+                z-index: 100;
+                box-shadow: 10px 0 40px rgba(0,0,0,0.5);
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-menu a {
+                font-size: 1.3rem;
+                text-align: left; 
+                width: 100%;
+            }
+            
+            .nav-menu a::after {
+                display: none;
+            }
+
+            .hero-static { height: 100vh; }
+            .hero-static-content h1 { font-size: 2.5rem; }
+            .hero-static-content p { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            
+            .car-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 1rem; 
+             }
+            .car-image { height: 120px; }
+            .car-info { padding: 1rem; }
+            .car-name { font-size: 1rem; }
+            .car-price { font-size: 0.9rem; }
+            .car-features { display: none; }
+            .car-book-btn { font-size: 0.9rem; padding: 8px 12px; }
+
+            .whatsapp-float { width: 50px; height: 50px; font-size: 25px; bottom: 20px; right: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container, .container { padding: 0 1rem; }
+            .hero-static-content h1 { font-size: 2.2rem; }
+            .cta-button { padding: 12px 25px; font-size: 1rem; }
+
+            .car-grid {
+                grid-template-columns: 1fr;
+            }
+            .car-image { height: 180px; }
+            .car-info { padding: 1.5rem; }
+            .car-name { font-size: 1.2rem; }
+            .car-price { font-size: 1.1rem; }
+            
+            /* --- PERBAIKAN DIMULAI DI SINI --- */
+            /* Solusi: Mengecilkan logo di layar sangat kecil agar hamburger muat */
+            .logo {
+                font-size: 1.2rem; /* Mengecilkan ukuran font teks logo */
+                gap: 0.5rem; /* Mengurangi jarak antara ikon dan teks */
+            }
+            .logo-icon {
+                width: 30px; /* Mengecilkan ikon */
+                height: 30px;
+            }
+            /* --- PERBAIKAN SELESAI --- */
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo sky trans nusantara.png" alt="Logo SkyTransNusantara" class="logo-icon">
+                <span>SkyTransNusantara</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Tentang</a></li>
+                <li><a href="index.html">Lepas Kunci</a></li>
+                <li><a href="mobil-plus-supir.html"class="active">Mobil + Supir</a></li>
+                <li><a href="blog.html" >Blog</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-static" id="home">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-static-content">
+            <h1>Rental Mobil + Supir di Cimahi & Bandung</h1>
+            <p>Nikmati perjalanan nyaman dan aman dengan supir profesional kami. Layanan premium untuk segala kebutuhan Anda.</p>
+            <a href="https://wa.me/6285848928876" class="cta-button" target="_blank">Pesan Sekarang</a>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Layanan Mobil Dengan Supir</h2>
+            <div class="about-content animate-on-scroll">
+                <div class="about-text">
+                    <h2>Kenyamanan dan Keamanan Terjamin</h2>
+                    <p>Layanan sewa mobil dengan supir dari SkyTransNusantara memberikan Anda keleluasaan untuk menikmati perjalanan tanpa lelah menyetir. Supir kami berpengalaman, ramah, dan menguasai rute terbaik di Bandung, Cimahi, dan sekitarnya.</p>
+                    <p>Serahkan urusan perjalanan pada kami, dan fokuslah pada agenda bisnis atau liburan Anda. Kami menjamin ketepatan waktu dan pelayanan yang memuaskan.</p>
+                </div>
+                <div class="about-text">
+                    <h2>Keunggulan Layanan + Supir</h2>
+                    <ul>
+                        <li>Supir profesional, ramah, dan berpengalaman</li>
+                        <li>Tidak perlu khawatir mencari rute dan parkir</li>
+                        <li>Perjalanan lebih santai dan efisien</li>
+                        <li>Armada bersih dan terawat untuk kenyamanan maksimal</li>
+                        <li>Harga kompetitif sudah termasuk jasa supir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Pilihan Kendaraan Kami (Dengan Supir)</h2>
+            <p class="section-subtitle">Semua harga di bawah ini sudah termasuk layanan supir profesional.<br>Belum termasuk BBM, tol, dan parkir.</p>
+
+            <div class="car-grid animate-on-scroll">
+                <!-- Mobil 1 -->
+                <div class="car-card">
+                    <img src="images/brio.png" alt="Honda Brio" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Brio';">
+                    <div class="car-info">
+                        <div class="car-name">New Brio</div>
+                        <div class="car-price">Mulai Rp 500.000/hari</div>
+                        <ul class="car-features">
+                            <li>5 Penumpang</li>
+                            <li>LCGC Irit</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20New%20Brio%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 2 -->
+                <div class="car-card">
+                    <img src="images/Toyota-Calya.png" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Calya';">
+                    <div class="car-info">
+                        <div class="car-name">Toyota Calya</div>
+                        <div class="car-price">Mulai Rp 500.000/hari</div>
+                        <ul class="car-features">
+                            <li>7 Penumpang</li>
+                            <li>LCGC Keluarga</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Toyota%20Calya%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 3 -->
+                <div class="car-card">
+                    <img src="images/avanza.png" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Xenia';">
+                    <div class="car-info">
+                        <div class="car-name">Daihatsu Xenia</div>
+                        <div class="car-price">Mulai Rp 500.000/hari</div>
+                        <ul class="car-features">
+                            <li>7 Penumpang</li>
+                            <li>MPV Andal</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Daihatsu%20Xenia%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 4 -->
+                <div class="car-card">
+                    <img src="images/xenia.png" alt="Toyota Avanza Grand" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Avanza';">
+                    <div class="car-info">
+                        <div class="car-name">Toyota Avanza Grand</div>
+                        <div class="car-price">Mulai Rp 500.000/hari</div>
+                        <ul class="car-features">
+                            <li>7 Penumpang</li>
+                            <li>MPV Populer</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Toyota%20Avanza%20Grand%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 5 -->
+                <div class="car-card">
+                    <img src="images/Mitsubishi XPander Warna Hitam Black.png" alt="Mitsubishi Xpander" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Xpander';">
+                    <div class="car-info">
+                        <div class="car-name">Mitsubishi Xpander</div>
+                        <div class="car-price">Mulai Rp 600.000/hari</div>
+                        <ul class="car-features">
+                           <li>7 Penumpang</li>
+                           <li>MPV Modern</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Mitsubishi%20Xpander%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 6 -->
+                <div class="car-card">
+                    <img src="images/avanza tss.png" alt="Toyota Avanza TSS" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Avanza+TSS';">
+                    <div class="car-info">
+                        <div class="car-name">Toyota Avanza TSS</div>
+                        <div class="car-price">Mulai Rp 600.000/hari</div>
+                        <ul class="car-features">
+                           <li>7 Penumpang</li>
+                           <li>Fitur Canggih</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Toyota%20Avanza%20TSS%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 7 -->
+                <div class="car-card">
+                    <img src="images/innova reborn.png" alt="Toyota Innova Reborn" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Innova';">
+                    <div class="car-info">
+                        <div class="car-name">Innova Reborn</div>
+                        <div class="car-price">Mulai Rp 800.000/hari</div>
+                        <ul class="car-features">
+                            <li>8 Penumpang</li>
+                            <li>Kenyamanan Ekstra</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Innova%20Reborn%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                 <!-- Mobil 8 -->
+                <div class="car-card">
+                    <img src="images/download2.png" alt="Toyota Zenix Hybrid G" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Zenix';">
+                    <div class="car-info">
+                        <div class="car-name">Zenix Hybrid G</div>
+                        <div class="car-price">Mulai Rp 1.000.000/hari</div>
+                        <ul class="car-features">
+                            <li>7 Penumpang</li>
+                            <li>Hybrid Mewah</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Zenix%20Hybrid%20G%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 9 -->
+                <div class="car-card">
+                    <img src="images/mitsubishi-pajero-sport-white-exceed.png" alt="Mitsubishi Pajero" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Pajero';">
+                    <div class="car-info">
+                        <div class="car-name">Pajero Sport</div>
+                        <div class="car-price">Mulai Rp 1.150.000/hari</div>
+                        <ul class="car-features">
+                            <li>7 Penumpang</li>
+                            <li>SUV Tangguh</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Pajero%20Sport%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 10 -->
+                <div class="car-card">
+                    <img src="images/toyota-fortuner-top-model-2755cc-automatic-transmission-turbo-engine-6-speed-gear-free-png.png" alt="Toyota Fortuner" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Fortuner';">
+                    <div class="car-info">
+                        <div class="car-name">Fortuner VRZ</div>
+                        <div class="car-price">Mulai Rp 1.150.000/hari</div>
+                        <ul class="car-features">
+                            <li>7 Penumpang</li>
+                            <li>SUV Gagah</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Fortuner%20VRZ%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 11 -->
+                <div class="car-card">
+                    <img src="images/download (3).png" alt="Toyota Hiace Premio Luxury" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Hiace';">
+                    <div class="car-info">
+                        <div class="car-name">Hiace Commuter</div>
+                        <div class="car-price">Rp 1.650.000 (All In)</div>
+                        <ul class="car-features">
+                            <li>15 Penumpang</li>
+                            <li>Perjalanan Rombongan</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Hiace%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <!-- Mobil 12 -->
+                <div class="car-card">
+                    <img src="images/alphard-transformer-350x220-1.png" alt="Toyota Alphard Transformer" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Alphard';">
+                    <div class="car-info">
+                        <div class="car-name">Alphard Transformer</div>
+                        <div class="car-price">Mulai Rp 2.350.000/hari</div>
+                        <ul class="car-features">
+                            <li>6 Penumpang</li>
+                            <li>Kemewahan Terbaik</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Alphard%20Transformer%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+                 <!-- Mobil 13 -->
+                <div class="car-card">
+                    <img src="images/1697452306-all-new-alphard-25-g-cvt-premium-color.png" alt="Toyota Alphard EV" class="car-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FDD500/1C0202?text=Alphard+EV';">
+                    <div class="car-info">
+                        <div class="car-name">Alphard EV</div>
+                        <div class="car-price">Mulai Rp 3.350.000/hari</div>
+                        <ul class="car-features">
+                            <li>6 Penumpang</li>
+                            <li>Mewah & Ramah Lingkungan</li>
+                        </ul>
+                        <a href="https://wa.me/6285848928876?text=Halo,%20saya%20tertarik%20untuk%20menyewa%20Alphard%20EV%20dengan%20supir." class="car-book-btn" target="_blank">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Section -->
+    <section class="section seo-section">
+        <div class="container">
+            <div class="seo-content animate-on-scroll">
+                <h2>Layanan Sewa Mobil + Supir Profesional</h2>
+                <p>
+                    SkyTransNusantara menyediakan layanan sewa mobil plus supir yang andal dan profesional di area Bandung dan Cimahi. Nikmati perjalanan yang nyaman dan aman tanpa harus memikirkan rute, lalu lintas, dan parkir. Percayakan perjalanan Anda kepada kami.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content animate-on-scroll">
+                <div class="footer-section">
+                    <h3>SkyTransNusantara</h3>
+                    <p>Rental mobil terpercaya di Bandung & Cimahi dengan layanan profesional dan harga terjangkau.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6285848928876" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61579391992971" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/skytransnusantara.my_id/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak kami</h3>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/6285848928876">0858-4892-8876</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@skytransnusantara.com">skytransnusantara@gmail.com</a></p>
+                    <p><strong>Layanan:</strong> 24 Jam</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Layanan</h3>
+                    <p><a href="index.html">Lepas Kunci</a></p>
+                    <p><a href="mobil-plus-supir.html">Dengan Supir</a></p>
+                    <p><a href="#gallery">Rental Harian & Bulanan</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkyTransNusantara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6285848928876" class="whatsapp-float" target="_blank" title="Chat WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Particle Animation
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        const style = getComputedStyle(document.documentElement);
+        const particleColor = style.getPropertyValue('--light-gray').trim();
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color;
+            }
+            draw() {
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) { this.directionX = -this.directionX; }
+                if (this.y > canvas.height || this.y < 0) { this.directionY = -this.directionY; }
+                this.x += this.directionX; this.y += this.directionY; this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * .4) - .2;
+                let directionY = (Math.random() * .4) - .2;
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, particleColor));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); }
+        }
+        
+        window.addEventListener('resize', function() {
+            canvas.width = innerWidth; canvas.height = innerHeight; init();
+        });
+
+        init();
+        animate();
+
+        // Animate on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.animate-on-scroll').forEach(element => { observer.observe(element); });
+        });
+    </script>
+</body>
+</html>
